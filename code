@@ -1,0 +1,23 @@
+
+### KT_141.223.180.1 router Interface 6 >> Descr: 'GigabitEthernet1/6' | Name: 'Gi1/6' | Ip: '134.75.35.2' | Eth: '' ###
+### SKB_141.223.180.177 router Interface 14 >> Descr: 'GigabitEthernet1/14' | Name: 'Gi1/14' | Ip: '134.75.35.18' | Eth: '' ###
+
+Target[kreonet-internet]: 6:culture@141.223.180.1:::::2+14:culture@141.223.180.177:::::2
+SetEnv[kreonet-internet]: MRTG_INT_IP="210.223.242.98" MRTG_INT_DESCR="GigabitEthernet1/3"
+
+
+2) /usr/local/myscripts/network/network_traffic_internet.pl 수정
+  - 생성된 cfg 파일 선언 및 적용
+
+
+3) 웹 서버(180.10) html 코드 변경 수정
+
+*** 
+
+
+
+$workdir = "$webroot/network_mrtg";
+$cfgdir = "$basedir/network/cfg";
+$ip = "internet_sum";
+$ip2 = "wifi_sum";
+$ip3 = "kreonet_sum";
